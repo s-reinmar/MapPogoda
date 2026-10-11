@@ -65,3 +65,35 @@ Przygotowanie środowiska deweloperskiego, wdrożenie zależności Gradle, konfi
 - Brak jakichkolwiek zależności od frameworków zewnętrznych (UI / Retrofit / Android SDK) w warstwie `model/`.
 - Kompilacja zweryfikowana z sukcesem (`compile_applet`).
 
+---
+
+## Iteracja 3: Warstwa Logiki i Danych (2026-10-10)
+
+### Zakres i cel:
+- Implementacja obiektów DTO dla OpenWeather v2.5 (`CurrentWeatherDto`, `ForecastDto`).
+- Implementacja interfejsu klienta Retrofit `OpenWeatherApi`.
+- Implementacja produkcyjnego repozytorium `WeatherRepositoryImpl` z bezpieczną obsługą kluczy API, mapowaniem do encji i translacją wyjątków HTTP/sieciowych.
+- Implementacja `GpsLocationProvider` z integracją `FusedLocationProviderClient`, bezpieczną weryfikacją uprawnień czasu wykonania (Runtime Permissions) i obsługą asynchroniczną przez `suspendCancellableCoroutine`.
+- Wdrożenie dedykowanych przypadków użycia (Use Cases): `GetCurrentWeatherUseCase`, `GetForecastUseCase`, `GetUserLocationUseCase`, `SearchCityWeatherUseCase`.
+- Centralny kontener wstrzykiwania zależności `WeatherServiceLocator`.
+- Pełna polskojęzyczna dokumentacja KDoc dla wszystkich klas, metod i parametrów.
+
+### Zmodyfikowane i wygenerowane pliki:
+- `pl/j/reinmar/modules/weather/infrastructure/api/dto/CurrentWeatherDto.kt`: DTO bieżącej pogody z adapterami Moshi.
+- `pl/j/reinmar/modules/weather/infrastructure/api/dto/ForecastDto.kt`: DTO 5-dniowej prognozy pogody.
+- `pl/j/reinmar/modules/weather/infrastructure/api/OpenWeatherApi.kt`: Kontrakt Retrofit dla zapytań pogodowych (GPS i po nazwie miasta).
+- `pl/j/reinmar/modules/weather/infrastructure/WeatherRepositoryImpl.kt`: Implementacja repozytorium (obsługa błędów 401, 403, 404, 429, 5xx, sieciowych).
+- `pl/j/reinmar/modules/weather/infrastructure/GpsLocationProvider.kt`: Integracja z Google Play Services Fused Location.
+- `pl/j/reinmar/modules/weather/service/GetCurrentWeatherUseCase.kt`: Przypadek użycia pobierania aktualnej pogody.
+- `pl/j/reinmar/modules/weather/service/GetForecastUseCase.kt`: Przypadek użycia pobierania prognozy.
+- `pl/j/reinmar/modules/weather/service/GetUserLocationUseCase.kt`: Przypadek użycia pobierania współrzędnych użytkownika.
+- `pl/j/reinmar/modules/weather/service/SearchCityWeatherUseCase.kt`: Przypadek użycia wyszukiwania pogody po nazwie miasta.
+- `pl/j/reinmar/modules/weather/service/WeatherServiceLocator.kt`: Fabryka DI (Moshi, OkHttp, Retrofit, Use Cases).
+
+### Zgodność z regułami:
+- Zastosowanie zasad SOLID (SRP, DIP, ISP, OCP).
+- Pełna separacja warstw: brak zależności warstwy domenowej od warstwy infrastruktury.
+- Bezpieczeństwo kluczy: odczyt z `BuildConfig` bez twardego kodowania wartości w kodzie źródłowym.
+- Pomyślna weryfikacja kompilacji (`compile_applet`).
+
+

@@ -88,7 +88,7 @@ app/src/main/java/pl/j/reinmar/modules/weather/
 - [x] **Krok 0:** Inicjalizacja środowiska, konfiguracja zależności, Secrets Plugin, uprawnienia i ikona aplikacji.
 - [x] **Krok 1:** Analiza wymagań, architektura domenowa, utworzenie `PLAN.md` i `WORK_LOG.md`.
 - [x] **Krok 2:** Warstwa Domeny & Kontraktów (`model/` oraz `repository/`).
-- [ ] **Krok 3:** Warstwa Logiki i Danych (`service/` oraz `infrastructure/` dla OpenWeather i GPS).
+- [x] **Krok 3:** Warstwa Logiki i Danych (`service/` oraz `infrastructure/` dla OpenWeather i GPS).
 - [ ] **Krok 4:** Warstwa Prezentacji Jetpack Compose (`view/`, `WeatherViewModel`, integracja Google Maps).
 - [ ] **Krok 5:** Testy jednostkowe, integracyjne i brzegowe Robolectric/JUnit (`test/`).
 - [ ] **Krok 6:** Domknięcie iteracji, podsumowanie i aktualizacja statusów.
