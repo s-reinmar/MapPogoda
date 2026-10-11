@@ -86,7 +86,7 @@ app/src/main/java/com/example/modules/weather/
 
 ## 6. Backlog Zadań (Roadmap)
 - [x] **Krok 0:** Inicjalizacja środowiska, konfiguracja zależności, Secrets Plugin, uprawnienia i ikona aplikacji.
-- [ ] **Krok 1:** Analiza wymagań, architektura domenowa, utworzenie `PLAN.md` i `WORK_LOG.md`.
+- [x] **Krok 1:** Analiza wymagań, architektura domenowa, utworzenie `PLAN.md` i `WORK_LOG.md`.
 - [ ] **Krok 2:** Warstwa Domeny & Kontraktów (`model/` oraz `repository/`).
 - [ ] **Krok 3:** Warstwa Logiki i Danych (`service/` oraz `infrastructure/` dla OpenWeather i GPS).
 - [ ] **Krok 4:** Warstwa Prezentacji Jetpack Compose (`view/`, `WeatherViewModel`, integracja Google Maps).

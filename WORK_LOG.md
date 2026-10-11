@@ -20,3 +20,22 @@ Przygotowanie środowiska deweloperskiego, wdrożenie zależności Gradle, konfi
 
 ### Wyniki weryfikacji kompilacji:
 - `compile_applet`: Zakończona sukcesem (BUILD SUCCESSFUL).
+
+---
+
+## Iteracja 1: Planowanie Architektoniczne i Analiza Wymagań (2026-10-10)
+
+### Zakres i cel:
+- Zdefiniowanie granic modułu pogody (`com.example.modules.weather`), dekompozycja zadań, określenie reguł domenowych i obsługi błędów.
+- Przygotowanie dokumentów `PLAN.md` oraz `WORK_LOG.md`.
+- Zaprojektowanie struktury "Package by Feature" pod kątem zasad Clean Architecture i SOLID.
+
+### Zmodyfikowane i wygenerowane pliki:
+- `PLAN.md`: Stworzenie całościowego planu wdrożenia, macierzy testowej, punktów awarii i harmonogramu.
+- `WORK_LOG.md`: Inicjalizacja dziennika operacyjnego z rejestracją decyzji ADR.
+
+### Zidentyfikowane punkty awarii i mitigacje:
+1. *Brak zgody na uprawnienia GPS:* Fallback na domyślną lokalizację (Warszawa / 52.2297, 21.0122) z opcją interaktywnego wyboru punktu na mapie.
+2. *Brak internetu:* Zwracanie dedykowanego błędu domenowego `WeatherException.NetworkUnavailable`, uniemożliwienie zawieszenia UI i udostępnienie przycisku ponowienia.
+3. *Niepoprawny klucz OpenWeather API:* Obsługa kodów HTTP 401 i 403 z czytelnym komunikatem o konieczności konfiguracji klucza w panelu sekretów.
+4. *Walidacja współrzędnych:* Enkapsulacja w klasie domenowej `Coordinates` z rzuceniem wyjątku przy naruszeniu zakresu wartości szerokości i długości geograficznej.
