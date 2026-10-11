@@ -1,0 +1,2 @@
+feat(ui): Krok 4: Warstwa Prezentacji Jetpack Compose (view/, WeatherViewModel, integracja Google Maps).
+(Connecting presentation layer to business logic using WeatherViewModel and UI state. Implementation of application screens and UI components in Jetpack Compose, including Google Maps SDK integration to display weather on the map.)

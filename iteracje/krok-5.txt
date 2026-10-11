@@ -1,0 +1,2 @@
+test(qa): Krok 5: Testy jednostkowe, integracyjne i brzegowe Robolectric/JUnit (test/).
+(Writing a suite of unit and integration tests covering domain, business logic, and network integrations. Verification of success paths and handling edge cases and errors using Robolectric and JUnit frameworks.)
