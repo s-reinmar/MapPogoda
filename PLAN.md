@@ -90,5 +90,5 @@ app/src/main/java/pl/j/reinmar/modules/weather/
 - [x] **Krok 2:** Warstwa Domeny & Kontraktów (`model/` oraz `repository/`).
 - [x] **Krok 3:** Warstwa Logiki i Danych (`service/` oraz `infrastructure/` dla OpenWeather i GPS).
 - [x] **Krok 4:** Warstwa Prezentacji Jetpack Compose (`view/`, `WeatherViewModel`, integracja Google Maps).
-- [ ] **Krok 5:** Testy jednostkowe, integracyjne i brzegowe Robolectric/JUnit (`test/`).
+- [x] **Krok 5:** Testy jednostkowe, integracyjne i brzegowe Robolectric/JUnit (`test/`).
 - [ ] **Krok 6:** Domknięcie iteracji, podsumowanie i aktualizacja statusów.

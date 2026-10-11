@@ -19,6 +19,8 @@ android {
     versionCode = 1
     versionName = "1.0"
 
+    manifestPlaceholders["MAPS_API_KEY"] = "dummy_maps_key"
+
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
   }
 

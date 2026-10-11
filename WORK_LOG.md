@@ -133,5 +133,29 @@ Przygotowanie środowiska deweloperskiego, wdrożenie zależności Gradle, konfi
 - 100% polskojęzyczna dokumentacja KDoc.
 - Kompilacja zweryfikowana z sukcesem (`compile_applet`).
 
+---
+
+## Iteracja 5: Weryfikacja QA, Testy i Refaktoryzacja (2026-10-10)
+
+### Zakres i cel:
+- Implementacja kompleksowego zestawu testów jednostkowych i integracyjnych pokrywających warstwę domeny, repozytorium oraz ViewModel.
+- Pokrycie scenariuszy sukcesu, warunków brzegowych (edge cases), punktów awarii oraz błędów sieci/API.
+- Weryfikacja zgodności z regułami SOLID, hermetyzacji i 100% polskojęzyczną dokumentacją KDoc.
+
+### Zmodyfikowane i wygenerowane pliki testowe:
+- `pl/j/reinmar/modules/weather/model/CoordinatesTest.kt`: Testy walidacji szerokości i długości geograficznej WGS 84, rzucania wyjątków, formatowania stringów i fabryki `createSafe` (TC-02).
+- `pl/j/reinmar/modules/weather/model/WeatherDataTest.kt`: Testy przeliczeń jednostek (m/s -> km/h), zaokrąglania temperatur, określania kierunku wiatru i wykrywania mrozu.
+- `pl/j/reinmar/modules/weather/model/WeatherForecastTest.kt`: Testy logiki dobowego agregowania minimów i maksimów (`getDailySummaries`) oraz podziału godzinowego (`getHourly`).
+- `pl/j/reinmar/modules/weather/infrastructure/WeatherRepositoryImplTest.kt`: Testy mapowania DTO na domenę (TC-01), translacji błędów sieciowych (TC-03), błędów HTTP 401 (TC-04) i 404.
+- `pl/j/reinmar/modules/weather/view/WeatherViewModelTest.kt`: Testy przepływów UI (PermissionRequired -> Success, przełączanie zakładek, wyszukiwanie miast, obsługa błędów).
+- `com/example/ExampleRobolectricTest.kt`: Aktualizacja asercji `app_name` dla zgodności z nazwą "Pogoda GPS".
+- `app/build.gradle.kts`: Dodanie `manifestPlaceholders["MAPS_API_KEY"] = "dummy_maps_key"` do `defaultConfig` na potrzeby bezbłędnej fuzji manifestu w testach jednostkowych.
+
+### Wyniki testów QA:
+- Wykonano zadanie Gradle `:app:testDebugUnitTest`.
+- Wynik: **26/26 testów zakończonych pełnym sukcesem (BUILD SUCCESSFUL)**.
+- Kompilacja aplikacji produkcyjnej: **BUILD SUCCESSFUL** (`compile_applet`).
+
+
 
 
