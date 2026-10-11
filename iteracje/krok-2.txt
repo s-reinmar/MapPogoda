@@ -1,2 +1,0 @@
-feat(domain): Krok 2: Warstwa Domeny & Kontraktów (model/ oraz repository/).
-(Definition of domain models, entities, factories, and domain exceptions. Creating repository interfaces and contracts for weather data and location along with full Polish KDoc documentation.)

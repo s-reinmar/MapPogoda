@@ -1,2 +1,0 @@
-feat(data): Krok 3: Warstwa Logiki i Danych (service/ oraz infrastructure/ dla OpenWeather i GPS).
-(Implementation of repositories, application logic, and use cases. Adding support for fetching weather data from OpenWeather API via Retrofit, secure key handling from local.properties, and GPS location retrieval using FusedLocationProviderClient with runtime permissions.)

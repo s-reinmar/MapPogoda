@@ -1,2 +1,0 @@
-chore(setup): Krok 0: Inicjalizacja środowiska, konfiguracja zależności, Secrets Plugin, uprawnienia i ikona aplikacji.
-(Environment initialization and project configuration in build.gradle.kts. Adding dependencies and libraries, configuring secure retrieval of API keys from local.properties, adding application icon, and handling runtime permissions for GPS on Android 6+.)
