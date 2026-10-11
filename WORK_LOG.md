@@ -96,4 +96,42 @@ Przygotowanie środowiska deweloperskiego, wdrożenie zależności Gradle, konfi
 - Bezpieczeństwo kluczy: odczyt z `BuildConfig` bez twardego kodowania wartości w kodzie źródłowym.
 - Pomyślna weryfikacja kompilacji (`compile_applet`).
 
+---
+
+## Iteracja 4: Warstwa Prezentacji Jetpack Compose (2026-10-10)
+
+### Zakres i cel:
+- Implementacja modelu stanu interfejsu `WeatherUiState` oraz zakładek `WeatherTab`.
+- Implementacja `WeatherViewModel` z zarządzaniem stanem (`StateFlow`), obsługą błędów, fallbackiem offline i reakcją na uprawnienia GPS.
+- Implementacja komponentów UI Material 3:
+  - `WeatherTopBar`: Górny pasek z nazwą lokalizacji, współrzędnymi, wskaźnikiem źródła (GPS vs MAPA) i odświeżaniem.
+  - `CurrentWeatherCard`: Główna karta z gradientem tematycznym, wielką temperaturą, ikoną pogody i temperaturą odczuwalną.
+  - `HourlyForecastRow`: Poziomy pasek kart godzinowych (godzina, dzień, ikona, temperatura, prawdopodobieństwo opadów).
+  - `DailyForecastList`: Lista 5-dniowej prognozy dobowej z podsumowaniem minimów i maksimów.
+  - `WeatherMetricsGrid`: Siatka 4 kafelków ze wskaźnikami (Wiatr, Wilgotność, Ciśnienie, Zachmurzenie).
+  - `ApiKeyDialog`: Okno konfiguracji i aktualizacji klucza OpenWeather API.
+  - `WeatherMapScreen`: Integracja z Google Maps (`maps-compose`), wybór punktu przez kliknięcie na mapie, animacja kamery, przycisk centrowania na GPS oraz podgląd klikniętego punktu z przyciskiem pobrania pogody.
+  - `WeatherMainScreen`: Płynna nawigacja w dolnym pasku (Pulpit, Mapa GPS, Wyszukiwarka/Ustawienia), obsługa stanów Loading, Success, Error (z opcją Offline Cache) i PermissionRequired.
+  - `MainActivity`: Integracja `enableEdgeToEdge`, `rememberLauncherForActivityResult` dla uprawnień `ACCESS_FINE_LOCATION` i `ACCESS_COARSE_LOCATION`.
+
+### Zmodyfikowane i wygenerowane pliki:
+- `pl/j/reinmar/modules/weather/view/WeatherUiState.kt`
+- `pl/j/reinmar/modules/weather/view/WeatherViewModel.kt`
+- `pl/j/reinmar/modules/weather/view/components/WeatherTopBar.kt`
+- `pl/j/reinmar/modules/weather/view/components/CurrentWeatherCard.kt`
+- `pl/j/reinmar/modules/weather/view/components/HourlyForecastRow.kt`
+- `pl/j/reinmar/modules/weather/view/components/DailyForecastList.kt`
+- `pl/j/reinmar/modules/weather/view/components/WeatherMetricsGrid.kt`
+- `pl/j/reinmar/modules/weather/view/components/ApiKeyDialog.kt`
+- `pl/j/reinmar/modules/weather/view/WeatherMapScreen.kt`
+- `pl/j/reinmar/modules/weather/view/WeatherMainScreen.kt`
+- `com/example/MainActivity.kt`
+
+### Zgodność z regułami:
+- Zastosowanie unikalnych `Modifier.testTag` dla wszystkich kluczowych elementów UI.
+- Spełnienie wytycznych dostępności (minimalny rozmiar klikalny 48dp, opisy `contentDescription`).
+- 100% polskojęzyczna dokumentacja KDoc.
+- Kompilacja zweryfikowana z sukcesem (`compile_applet`).
+
+
 
