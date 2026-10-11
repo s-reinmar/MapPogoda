@@ -1,4 +1,4 @@
-package com.example.ui.theme
+package pl.j.reinmar.modules.weather.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

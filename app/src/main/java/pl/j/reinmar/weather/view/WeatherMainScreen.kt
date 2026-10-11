@@ -47,6 +47,7 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -60,7 +61,7 @@ import pl.j.reinmar.modules.weather.view.components.WeatherMetricsGrid
 import pl.j.reinmar.modules.weather.view.components.WeatherTopBar
 
 /**
- * Główny ekran aplikacji Pogoda GPS spinający wszystkie podwidoki i stan z [WeatherViewModel].
+ * Główny ekran aplikacji MapPogoda spinający wszystkie podwidoki i stan z [WeatherViewModel].
  *
  * @param viewModel Instancja [WeatherViewModel].
  * @param onRequestLocationPermission Wywołanie systemowego żądania uprawnień lokalizacyjnych.
@@ -79,8 +80,8 @@ fun WeatherMainScreen(
 
     val activeLocationTitle = when (val state = uiState) {
         is WeatherUiState.Success -> state.weather.displayLocation()
-        is WeatherUiState.Error -> state.cachedWeather?.displayLocation() ?: "Pogoda GPS"
-        else -> "Pogoda GPS"
+        is WeatherUiState.Error -> state.cachedWeather?.displayLocation() ?: stringResource(R.string.app_name)
+        else -> stringResource(R.string.app_name)
     }
 
     val activeCoordinates = when (val state = uiState) {

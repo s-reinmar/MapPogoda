@@ -1,4 +1,4 @@
-# PLAN.md — Plan Architektury i Realizacji Aplikacji Pogoda GPS
+# PLAN.md — Plan Architektury i Realizacji Aplikacji MapPogoda
 
 ## 1. Cel i Zakres Projektu
 Aplikacja mobilna na platformę Android służąca do monitorowania bieżącej pogody oraz szczegółowej prognozy pogody na podstawie bieżącej lokalizacji użytkownika (GPS) lub punktu wskazanego na interaktywnej mapie (Google Maps SDK).

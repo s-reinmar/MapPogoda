@@ -1,4 +1,4 @@
-package com.example
+package pl.j.reinmar.weather
 
 import android.Manifest
 import android.os.Bundle
@@ -13,13 +13,13 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.ui.theme.MyApplicationTheme
+import pl.j.reinmar.modules.weather.ui.theme.MyApplicationTheme
 import pl.j.reinmar.modules.weather.service.WeatherServiceLocator
 import pl.j.reinmar.modules.weather.view.WeatherMainScreen
 import pl.j.reinmar.modules.weather.view.WeatherViewModel
 
 /**
- * Główna aktywność aplikacji Pogoda GPS.
+ * Główna aktywność aplikacji MapPogoda.
  *
  * Inicjalizuje motyw Material 3, obsługuje tryb Edge-to-Edge,
  * zarządza uprawnieniami geolokalizacji w czasie działania (Runtime Permissions dla Android 6+)

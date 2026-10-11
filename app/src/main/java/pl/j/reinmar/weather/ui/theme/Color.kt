@@ -1,4 +1,4 @@
-package com.example.ui.theme
+package pl.j.reinmar.modules.weather.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
