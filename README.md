@@ -23,7 +23,9 @@ Aplikacja mobilna na platformę Android łącząca dane meteorologiczne z intera
 Projekt zorganizowany jest zgodnie z wzorcami **Clean Architecture**, **MVVM (Model-View-ViewModel)** oraz zasadą podziału **Package by Feature**:
 
 ```
-app/src/main/java/pl/j/reinmar/modules/weather/
+app/src/main/java/pl/j/reinmar/weather/
+├── MainActivity.kt             # Punkt wejścia aplikacji
+├── ui/theme/                   # Motyw Material 3
 ├── model/                     # Encje domenowe, Value Objects (Coordinates, WeatherData, WeatherForecast), wyjątki
 ├── repository/                # Abstrakcje i kontrakty (IWeatherRepository, ILocationProvider) - DIP, ISP
 ├── infrastructure/            # Implementacje (WeatherRepositoryImpl, GpsLocationProvider, OpenWeatherApi, DTO)
@@ -31,13 +33,15 @@ app/src/main/java/pl/j/reinmar/modules/weather/
 └── view/                      # Interfejs Jetpack Compose (WeatherViewModel, WeatherMainScreen, WeatherMapScreen, komponenty)
 ```
 
+Po ostatnim refaktorze pliki źródłowe znajdują się w katalogu `pl/j/reinmar/weather`. Deklaracje pakietów warstw `model`, `repository`, `infrastructure`, `service`, `view` i `ui.theme` nadal używają prefiksu `pl.j.reinmar.modules.weather`; `MainActivity` ma pakiet `pl.j.reinmar.weather`.
+
 - **Język:** Kotlin (100% idiomatyczny, Coroutines, StateFlow, niemutowalne obiekty danych).
 - **UI:** Jetpack Compose (Material Design 3, dynamiczne motywy, Edge-to-Edge).
 - **Sieć:** Retrofit 2, Moshi, OkHttp 4 z interfejsem logowania.
 - **Lokalizacja:** Google Play Services Location (`FusedLocationProviderClient`).
 - **Mapy:** Google Maps Compose (`com.google.maps.android:maps-compose`).
 - **Zarządzanie sekretami:** `secrets-gradle-plugin` (bezpieczne wstrzykiwanie kluczy z pliku `.env` do `BuildConfig`).
-- **Testy:** JUnit 4, Robolectric, Kotlinx Coroutines Test (100% sukcesu testów jednostkowych i integracyjnych).
+- **Testy:** JUnit 4, Robolectric, Kotlinx Coroutines Test (26 testów jednostkowych i Robolectric).
 
 ---
 
@@ -61,6 +65,8 @@ Możesz również podać lub zmienić klucz OpenWeather w samej aplikacji: zakł
 ---
 
 ## 🚀 Uruchomienie i Budowanie Projektu
+
+Projekt używa Gradle Wrapper w wersji **9.6.0**.
 
 ### Kompilacja aplikacji:
 ```bash
@@ -91,4 +97,5 @@ Możesz również podać lub zmienić klucz OpenWeather w samej aplikacji: zakł
 
 Projekt stworzony na otwartej licencji MIT.
 Wersja: **v1.0.0**
-Pakiet: `pl.j.reinmar.modules.weather`
+Pakiet warstw aplikacji: `pl.j.reinmar.weather`
+Pakiet `MainActivity`: `pl.j.reinmar.weather`
