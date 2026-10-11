@@ -39,3 +39,29 @@ Przygotowanie środowiska deweloperskiego, wdrożenie zależności Gradle, konfi
 2. *Brak internetu:* Zwracanie dedykowanego błędu domenowego `WeatherException.NetworkUnavailable`, uniemożliwienie zawieszenia UI i udostępnienie przycisku ponowienia.
 3. *Niepoprawny klucz OpenWeather API:* Obsługa kodów HTTP 401 i 403 z czytelnym komunikatem o konieczności konfiguracji klucza w panelu sekretów.
 4. *Walidacja współrzędnych:* Enkapsulacja w klasie domenowej `Coordinates` z rzuceniem wyjątku przy naruszeniu zakresu wartości szerokości i długości geograficznej.
+
+---
+
+## Iteracja 2: Warstwa Domeny & Kontraktów (2026-10-10)
+
+### Zakres i cel:
+- Implementacja encji, modeli wartości (Value Objects), agregatów oraz hierarchii wyjątków w pakiecie `pl.j.reinmar.modules.weather.model`.
+- Zdefiniowanie interfejsów kontraktów `IWeatherRepository` oraz `ILocationProvider` w pakiecie `pl.j.reinmar.modules.weather.repository`.
+- Pokrycie wszystkich klas, metod i właściwości 100% polskojęzyczną dokumentacją KDoc.
+
+### Zmodyfikowane i wygenerowane pliki:
+- `pl/j/reinmar/modules/weather/model/Coordinates.kt`: Obiekt wartości z rygorystyczną walidacją zakresu WGS 84 i fabryką `createSafe`.
+- `pl/j/reinmar/modules/weather/model/WeatherCondition.kt`: Typ wyliczeniowy z polskimi nazwami zjawisk oraz mapowaniem kodów OpenWeather.
+- `pl/j/reinmar/modules/weather/model/WeatherData.kt`: Główna niemutowalna encja aktualnej pogody z metodami pomocniczymi (formatowanie, wskaźniki mrozu, konwersja jednostek).
+- `pl/j/reinmar/modules/weather/model/ForecastItem.kt`: Model pojedynczego punktu prognozy (formatowanie dat, godzin, prawdopodobieństwa opadów).
+- `pl/j/reinmar/modules/weather/model/WeatherForecast.kt`: Agregat prognozy pogody z metodami grupowania dobowego (`getDailySummaries`) i godzinowego (`getHourly`).
+- `pl/j/reinmar/modules/weather/model/WeatherException.kt`: Hierarchia wyjątków domenowych (błędy sieci, uprawnień, GPS, autoryzacji API, błędnych współrzędnych).
+- `pl/j/reinmar/modules/weather/repository/IWeatherRepository.kt`: Kontrakt dostępu do danych pogodowych (DIP, ISP).
+- `pl/j/reinmar/modules/weather/repository/ILocationProvider.kt`: Kontrakt dostawcy lokalizacji fizycznej GPS.
+
+### Zgodność z regułami:
+- Zastosowanie pakietu `pl.j.reinmar` zgodnie z życzeniem użytkownika.
+- 100% polskojęzyczny KDoc.
+- Brak jakichkolwiek zależności od frameworków zewnętrznych (UI / Retrofit / Android SDK) w warstwie `model/`.
+- Kompilacja zweryfikowana z sukcesem (`compile_applet`).
+

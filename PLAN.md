@@ -17,7 +17,7 @@ Aplikacja mobilna na platformę Android służąca do monitorowania bieżącej p
 ## 2. Stos Technologiczny i Narzędzia
 - **Język:** Kotlin (100% idiomatyczny, immutability, `data class`, Coroutines, Flow).
 - **Interfejs użytkownika:** Jetpack Compose (Material Design 3, dynamiczne motywy, Edge-to-Edge).
-- **Architektura:** MVVM + Clean Architecture / Package by Feature (`com.example.modules.weather`).
+- **Architektura:** MVVM + Clean Architecture / Package by Feature (`pl.j.reinmar.modules.weather`).
 - **Warstwa sieciowa:** Retrofit 2 + Moshi + OkHttp + Logging Interceptor.
 - **Geolokalizacja:** Google Play Services Location (`FusedLocationProviderClient`).
 - **Mapy:** Google Maps Compose (`com.google.maps.android:maps-compose`) + Play Services Maps.
@@ -28,7 +28,7 @@ Aplikacja mobilna na platformę Android służąca do monitorowania bieżącej p
 
 ## 3. Struktura Modułowa ("Package by Feature")
 ```
-app/src/main/java/com/example/modules/weather/
+app/src/main/java/pl/j/reinmar/modules/weather/
 ├── model/                     # Encje domenowe, modele wartości (VO), wyjątki, fabryki
 │   ├── WeatherData.kt         # Model aktualnej pogody (temperatura, warunki, wiatr, ciśnienie itp.)
 │   ├── ForecastItem.kt        # Element prognozy godzinowej / dziennej
@@ -87,7 +87,7 @@ app/src/main/java/com/example/modules/weather/
 ## 6. Backlog Zadań (Roadmap)
 - [x] **Krok 0:** Inicjalizacja środowiska, konfiguracja zależności, Secrets Plugin, uprawnienia i ikona aplikacji.
 - [x] **Krok 1:** Analiza wymagań, architektura domenowa, utworzenie `PLAN.md` i `WORK_LOG.md`.
-- [ ] **Krok 2:** Warstwa Domeny & Kontraktów (`model/` oraz `repository/`).
+- [x] **Krok 2:** Warstwa Domeny & Kontraktów (`model/` oraz `repository/`).
 - [ ] **Krok 3:** Warstwa Logiki i Danych (`service/` oraz `infrastructure/` dla OpenWeather i GPS).
 - [ ] **Krok 4:** Warstwa Prezentacji Jetpack Compose (`view/`, `WeatherViewModel`, integracja Google Maps).
 - [ ] **Krok 5:** Testy jednostkowe, integracyjne i brzegowe Robolectric/JUnit (`test/`).
