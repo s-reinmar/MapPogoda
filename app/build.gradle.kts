@@ -14,8 +14,8 @@ android {
 
   defaultConfig {
     applicationId = "com.aistudio.weathergps.kpxwya"
-    minSdk = 24
-    targetSdk = 36
+    minSdk = 23
+    targetSdk = 33
     versionCode = 1
     versionName = "1.0.0"
 
