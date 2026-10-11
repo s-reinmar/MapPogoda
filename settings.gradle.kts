@@ -22,6 +22,6 @@ dependencyResolutionManagement {
   }
 }
 
-rootProject.name = "Pogoda GPS"
+rootProject.name = "MapPogoda"
 
 include(":app")

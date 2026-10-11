@@ -91,4 +91,10 @@ app/src/main/java/pl/j/reinmar/modules/weather/
 - [x] **Krok 3:** Warstwa Logiki i Danych (`service/` oraz `infrastructure/` dla OpenWeather i GPS).
 - [x] **Krok 4:** Warstwa Prezentacji Jetpack Compose (`view/`, `WeatherViewModel`, integracja Google Maps).
 - [x] **Krok 5:** Testy jednostkowe, integracyjne i brzegowe Robolectric/JUnit (`test/`).
-- [ ] **Krok 6:** Domknięcie iteracji, podsumowanie i aktualizacja statusów.
+- [x] **Krok 6:** Domknięcie iteracji, podsumowanie i aktualizacja statusów.
+
+### Dalsze możliwe rozszerzenia funkcjonalne (Moduły perspektywiczne):
+- [ ] **Moduł Ulubione Lokalizacje:** Zapisywanie listy ulubionych miast w bazie Room lub DataStore z szybkim przełączaniem.
+- [ ] **Moduł Warstw Pogodowych Mapy:** Nakładanie kafelków opadów deszczu/chmur (Tile Overlay) bezpośrednio na Google Maps.
+- [ ] **Moduł Widgetu Ekranu Głównego (Glance):** Widżet pulpitu Androida z aktualną temperaturą i pogodą.
+- [ ] **Moduł Powiadomień o Alertach Pogodowych:** Okresowe sprawdzanie gwałtownych zjawisk pogodowych w tle (WorkManager).

@@ -1,5 +1,5 @@
 {
-  "name": "Pogoda GPS",
+  "name": "MapPogoda",
   "description": "Aplikacja pogodowa z GPS i mapą pokazująca aktualną pogodę oraz prognozę na bazie lokalizacji użytkownika.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]

@@ -156,6 +156,31 @@ Przygotowanie środowiska deweloperskiego, wdrożenie zależności Gradle, konfi
 - Wynik: **26/26 testów zakończonych pełnym sukcesem (BUILD SUCCESSFUL)**.
 - Kompilacja aplikacji produkcyjnej: **BUILD SUCCESSFUL** (`compile_applet`).
 
+---
+
+## Iteracja 6: Domknięcie Iteracji i Podsumowanie (2026-10-10)
+
+### Zakres i cel:
+- Podsumowanie pełnego cyklu wytwórczego aplikacji Pogoda GPS.
+- Weryfikacja spójności repozytorium, statusów zadań w `PLAN.md` oraz wpisów w `WORK_LOG.md`.
+- Zapewnienie pełnej gotowości aplikacji do uruchomienia na urządzeniu i w emulatorze.
+
+### Stan realizacji projektu:
+- Wszystkie kamienie milowe od Kroku 0 do Kroku 6 zostały zrealizowane i zweryfikowane:
+  1. **Krok 0 [x]:** Inicjalizacja Gradle, biblioteki (Retrofit, Maps Compose, Play Services Location, Moshi, Coroutines), Secrets Plugin (`.env`), manifest, uprawnienia i adaptacyjna ikona launchera.
+  2. **Krok 1 [x]:** Analiza wymagań, granice domeny `pl.j.reinmar.modules.weather`, pliki root `PLAN.md` i `WORK_LOG.md`.
+  3. **Krok 2 [x]:** Warstwa domeny i kontraktów (`model/`, `repository/`) z pełną polskojęzyczną dokumentacją KDoc.
+  4. **Krok 3 [x]:** Warstwa logiki i danych (`service/`, `infrastructure/`): DTO Moshi, Retrofit `OpenWeatherApi`, `WeatherRepositoryImpl`, `GpsLocationProvider`, Use Cases i `WeatherServiceLocator`.
+  5. **Krok 4 [x]:** Warstwa prezentacji Jetpack Compose (`view/`): `WeatherViewModel` (StateFlow), `WeatherMainScreen`, `WeatherMapScreen` (Google Maps z wyborem punktu), karty pogodowe, wykresy i wskaźniki meteorologiczne.
+  6. **Krok 5 [x]:** Zestaw 26 testów jednostkowych i integracyjnych JUnit/Robolectric zakończony 100% sukcesem.
+  7. **Krok 6 [x]:** Domknięcie dokumentacji, aktualizacja rejestru i wyznaczenie dalszych modułów rozwojowych.
+
+### Gotowość produkcyjna i bezpieczeństwo:
+- Zero twardo zakodowanych kluczy API w kodzie źródłowym.
+- Płynne fallbacki dla trybu offline (informowanie użytkownika, przycisk ponowienia, prezentacja ostatnio zapamiętanych danych).
+- Elastyczny mechanizm konfiguracji klucza OpenWeather z poziomu pliku `.env` lub dedykowanego dialogu w UI.
+
+
 
 
 
