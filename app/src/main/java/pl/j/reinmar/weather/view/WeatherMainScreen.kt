@@ -51,6 +51,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.example.R
 import pl.j.reinmar.modules.weather.model.WeatherException
 import pl.j.reinmar.modules.weather.service.WeatherServiceLocator
 import pl.j.reinmar.modules.weather.view.components.ApiKeyDialog
